@@ -13,7 +13,7 @@ public class LoveMatchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoveMatchApplication.class, args);
 	}{
-		ChatGPTResponse chatGPTResponse = new ChatGPTResponse("James", "Sameer");
+		ChatGPTResponse chatGPTResponse = new ChatGPTResponse("Ammarah", "Chris Evans", "Pisces", "Gemini");
 		System.out.println(chatGPTResponse.formatRequest());
 
 		System.out.println(chatGPTResponse.MakeRequest());
