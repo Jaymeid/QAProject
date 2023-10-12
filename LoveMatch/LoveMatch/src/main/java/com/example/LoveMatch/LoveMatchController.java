@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 @Controller
 public class LoveMatchController {
+    private int loveMatchPercentage;
 
     public void generateLoveMatch() {
         Scanner scanner = new Scanner(System.in);
@@ -19,8 +20,12 @@ public class LoveMatchController {
         String name2 = scanner.nextLine();
 
         Random random = new Random();
-        int loveMatchPercentage = random.nextInt(101);
+        loveMatchPercentage = random.nextInt(101);
 
         System.out.println("The match between " + name1 + " and " + name2 + " is " + loveMatchPercentage + "%");
+    }
+
+    public int getLoveMatchPercentage() {
+        return loveMatchPercentage;
     }
 }
