@@ -4,12 +4,16 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Random;
+import com.example.LoveMatch.LoveMatchController;
+import com.example.LoveMatch.Keys;
 public class ChatGPTResponse {
     String name1;
     String name2;
     String prompt;
 
     String[] descriptors;
+
+    LoveMatchController loveMatchController;
     public ChatGPTResponse(String firstName, String secondName){
         name1 = firstName;
         name2 = secondName;
@@ -19,7 +23,7 @@ public class ChatGPTResponse {
 
     public String MakeRequest(){
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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";
+        String apiKey = Keys.getOPENAIKEY();
         String model = "gpt-3.5-turbo";
 
         try {
