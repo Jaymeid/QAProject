@@ -6,8 +6,15 @@
 </head>
 <body>
 
-<form align="center" action="/calculateLoveMatch" method="POST">
-<p>Love Match Percentage: <span th:text="${loveMatchPercentage}"></span></p>
+<form align="center" action="/outputLoveMatch" method="POST">
+<p>Name1: <span th:text="${name1}"></span></p>
+<p>Name2: <span th:text="${name2}"></span></p>
+<p>Love Match Percentage: <span th:text="${loveMatchPercentage}"%></span></p>
+<p><span th:text="${loveDescription}"></span></p>
+
+
+
+
 </form>
 
 
