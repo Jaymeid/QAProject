@@ -13,12 +13,16 @@ public class ChatGPTResponse {
 
     String[] descriptors;
 
+    String[] tropes;
+
     LoveMatchController loveMatchController;
     public ChatGPTResponse(String firstName, String secondName){
         name1 = firstName;
         name2 = secondName;
 
-        descriptors = new String[]{"funny", "endearing", "serious", "sad"};
+        descriptors = new String[]{"funny", "endearing", "serious", "sad", "dramatic", "heartbreaking"};
+
+        tropes = new String[]{"Enemies to Lovers", "Friends to Lovers", "Second Chance at Love", "Forbidden Love", "Small-Town Romance", "Love at First Sight"};
 
         loveMatchController = new LoveMatchController();
     }
@@ -79,8 +83,16 @@ public class ChatGPTResponse {
         return descriptors[randomIndex];
     }
 
+    private String getRandomTrope(){
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(0, tropes.length);
+
+        return tropes[randomIndex];
+    }
+
     public String formatRequest(){
-        return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other " + loveMatchController.generateLoveMatch() + "%";
+
+        return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other " + loveMatchController.generateLoveMatch() + "%" + " use this trope to write the theme " + getRandomTrope();
     }
 
 }
