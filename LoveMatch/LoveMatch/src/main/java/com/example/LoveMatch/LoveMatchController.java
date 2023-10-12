@@ -9,7 +9,13 @@ import java.util.Scanner;
 public class LoveMatchController {
     private int loveMatchPercentage;
 
+    public LoveMatchController(){
+        Random random = new Random();
+        loveMatchPercentage = random.nextInt(101);
+    }
+
     public void generateLoveMatch() {
+        //MVP example
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the LoveMatch Generator");
