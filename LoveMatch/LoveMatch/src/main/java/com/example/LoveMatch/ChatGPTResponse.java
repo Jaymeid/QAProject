@@ -19,11 +19,14 @@ public class ChatGPTResponse {
         name2 = secondName;
 
         descriptors = new String[]{"funny", "endearing", "serious", "sad"};
+
+        loveMatchController = new LoveMatchController();
     }
 
     public String MakeRequest(){
         String url = "https://api.openai.com/v1/chat/completions";
         String apiKey = Keys.getOPENAIKEY();
+        System.out.println("KEY HERE: " + apiKey);
         String model = "gpt-3.5-turbo";
 
         try {
@@ -34,7 +37,7 @@ public class ChatGPTResponse {
             connection.setRequestProperty("Content-Type", "application/json");
 
             // The request body
-            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + prompt + "\"}]}";
+            String body = "{\"model\": \"" + model + "\", \"messages\": [{\"role\": \"user\", \"content\": \"" + formatRequest() + "\"}]}";
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(body);
@@ -76,9 +79,8 @@ public class ChatGPTResponse {
         return descriptors[randomIndex];
     }
 
-    private String formatRequest(){
-        //return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other" +
-        return "";
+    public String formatRequest(){
+        return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other " + loveMatchController.getLoveMatchPercentage() + "%";
     }
 
 }
