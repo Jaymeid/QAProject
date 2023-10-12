@@ -14,7 +14,7 @@ public class LoveMatchController {
 
 
     public String generateDescription(String name1, String name2){
-        ChatGPTResponse chatGPTResponse = new ChatGPTResponse(name1, name2);
+        ChatGPTResponse chatGPTResponse = new ChatGPTResponse(name1, name2, "Leo", "Aries");
         return chatGPTResponse.MakeRequest();
     }
 
