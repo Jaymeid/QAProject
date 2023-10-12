@@ -80,7 +80,7 @@ public class ChatGPTResponse {
     }
 
     public String formatRequest(){
-        return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other " + loveMatchController.getLoveMatchPercentage() + "%";
+        return "Write a " + getRandomDescriptor() + " paragraph about how " + name1 + " and " + name2 + " love each other " + loveMatchController.generateLoveMatch() + "%";
     }
 
 }

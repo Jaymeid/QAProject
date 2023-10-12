@@ -13,10 +13,10 @@ public class LoveMatchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoveMatchApplication.class, args);
 	}{
-		ChatGPTResponse chatGPTResponse = new ChatGPTResponse("James", "Sameer");
+		/*ChatGPTResponse chatGPTResponse = new ChatGPTResponse("James", "Sameer");
 		System.out.println(chatGPTResponse.formatRequest());
 
-		System.out.println(chatGPTResponse.MakeRequest());
+		System.out.println(chatGPTResponse.MakeRequest());*/
 	}
 
 }

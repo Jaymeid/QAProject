@@ -1,27 +1,35 @@
 package com.example.LoveMatch;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 import java.util.Random;
 import java.util.Scanner;
 
 @Controller
 public class LoveMatchController {
-    private int loveMatchPercentage;
 
-
-    public LoveMatchController(){
+    public int generateLoveMatch(){
         Random random = new Random();
-        loveMatchPercentage = random.nextInt(101);
-    }
-
-    @GetMapping
-    public  Integer generateLoveMatch() {
-        Random random = new Random();
-        loveMatchPercentage = random.nextInt(101);
+        int loveMatchPercentage = random.nextInt(101);
         return loveMatchPercentage;
     }
+
+    @PostMapping("/calculateLoveMatch")
+    public String calculateLoveMatch(Model model,
+                                     @RequestParam String name1,
+                                     @RequestParam String name2) {
+        // Calculate love match percentage (for demonstration purposes, you can implement your own logic)
+        Random random = new Random();
+        int loveMatchPercentage = random.nextInt(101);
+
+        // Store the love match percentage in a model attribute
+        model.addAttribute("loveMatchPercentage", loveMatchPercentage);
+        return "result";
+    }
+
+
 
 
 }
