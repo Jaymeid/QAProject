@@ -1,0 +1,13 @@
+package com.example.LoveMatch;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LoveMatchApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LoveMatchApplication.class, args);
+	}
+
+}
